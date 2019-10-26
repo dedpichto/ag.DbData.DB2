@@ -6,7 +6,7 @@ A library for working with DB2 databases in .NET Framework, .NET Core and .NET S
 1. Add section to settings file (optional)
 ```csharp
 {
-  DB2DbDataSettings": {
+  "DB2DbDataSettings": {
     "AllowExceptionLogging": false, // optional, default is "true"
     "ConnectionString": "YOUR_CONNECTION_STRING" // optional
   }
