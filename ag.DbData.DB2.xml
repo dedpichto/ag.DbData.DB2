@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ag.DbData.DB2</name>
+    </assembly>
+    <members>
+        <member name="T:ag.DbData.DB2.DB2DbDataObject">
+            <summary>
+            Represents DB2DbDataObject object.
+            </summary>
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.#ctor(Microsoft.Extensions.Logging.ILogger{ag.DbData.Abstraction.IDbDataObject},Microsoft.Extensions.Options.IOptions{ag.DbData.DB2.DB2DbDataSettings},ag.DbData.Abstraction.Services.IDbDataStringProvider)">
+            <summary>
+            Creates new instance of <see cref="T:ag.DbData.DB2.DB2DbDataObject"/>.
+            </summary>
+            <param name="logger"><see cref="T:Microsoft.Extensions.Logging.ILogger"/> object.</param>
+            <param name="options"><see cref="T:ag.DbData.Abstraction.DbDataSettings"/> options.</param>
+            <param name="stringProvider"><see cref="T:ag.DbData.Abstraction.Services.IDbDataStringProvider"/> object.</param>
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataSet(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataSet(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataSet(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataSet(System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataSetInTransaction(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataSetInTransaction(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataSetInTransaction(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataSetInTransaction(System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataTable(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataTable(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataTableInTransaction(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataTableInTransaction(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.ExecuteCommand(System.Data.Common.DbCommand)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.ExecuteCommand(System.Data.Common.DbCommand,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.ExecuteCommandInTransaction(System.Data.Common.DbCommand)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.ExecuteCommandInTransaction(System.Data.Common.DbCommand,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.BeginTransaction(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.ExecuteAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.ExecuteAsync(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.ExecuteAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.ExecuteAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.GetScalarAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.GetScalarAsync(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.GetScalarAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.GetScalarAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:ag.DbData.DB2.DB2DbDataSettings">
+            <summary>
+            Represents DB2DbDataSettings object, inherited from <see cref="T:ag.DbData.Abstraction.DbDataSettings"/>.
+            </summary>
+        </member>
+        <member name="T:ag.DbData.DB2.Extensions.Extensions">
+            <summary>
+            Represents <see cref="N:ag.DbData.DB2"/> extensions.
+            </summary>
+        </member>
+        <member name="M:ag.DbData.DB2.Extensions.Extensions.AddAgDB2(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Appends the registration of <see cref="T:ag.DbData.DB2.Factories.DB2DbDataFactory"/> and <see cref="T:ag.DbData.DB2.DB2DbDataObject"/> services to <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add the services to.</param>
+            <returns><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="M:ag.DbData.DB2.Extensions.Extensions.AddAgDB2(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection)">
+            <summary>
+            Appends the registration of <see cref="T:ag.DbData.DB2.Factories.DB2DbDataFactory"/> and <see cref="T:ag.DbData.DB2.DB2DbDataObject"/> services to <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> and registers a configuration instance.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add the services to.</param>
+            <param name="configurationSection">The <see cref="T:Microsoft.Extensions.Configuration.IConfigurationSection"/> being bound.</param>
+            <returns><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="M:ag.DbData.DB2.Extensions.Extensions.AddAgDB2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{ag.DbData.DB2.DB2DbDataSettings})">
+            <summary>
+            Appends the registration of <see cref="T:ag.DbData.DB2.Factories.DB2DbDataFactory"/> and <see cref="T:ag.DbData.DB2.DB2DbDataObject"/> services to <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> and configures the options.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add the services to.</param>
+            <param name="configureOptions">The action used to configure the options.</param>
+            <returns><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="T:ag.DbData.DB2.Factories.DB2DbDataFactory">
+            <summary>
+            Represents DB2DbDataFactory object.
+            </summary>
+        </member>
+        <member name="M:ag.DbData.DB2.Factories.DB2DbDataFactory.Create">
+            <summary>
+            Creates object of type <see cref="T:ag.DbData.DB2.DB2DbDataObject"/>.
+            </summary>
+            <returns><see cref="T:ag.DbData.DB2.DB2DbDataObject"/> implementation of <see cref="T:ag.DbData.Abstraction.IDbDataObject"/> interface.</returns>
+        </member>
+        <member name="M:ag.DbData.DB2.Factories.DB2DbDataFactory.Create(System.String)">
+            <summary>
+            Creates object of type <see cref="T:ag.DbData.DB2.DB2DbDataObject"/>.
+            </summary>
+            <param name="connectionString">Database connection string.</param>
+            <returns><see cref="T:ag.DbData.DB2.DB2DbDataObject"/> implementation of <see cref="T:ag.DbData.Abstraction.IDbDataObject"/> interface.</returns>
+        </member>
+        <member name="M:ag.DbData.DB2.Factories.DB2DbDataFactory.#ctor(System.IServiceProvider)">
+            <summary>
+            Creates new DB2DbDataFactory object.
+            </summary>
+            <param name="serviceProvider"><see cref="T:System.IServiceProvider"/>.</param>
+        </member>
+        <member name="T:ag.DbData.DB2.Factories.IDB2DbDataFactory">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
