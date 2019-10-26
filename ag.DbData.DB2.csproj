@@ -9,6 +9,7 @@
     <PackageProjectUrl>https://github.com/dedpichto/ag.DbData.DB2</PackageProjectUrl>
     <RepositoryUrl>https://github.com/dedpichto/ag.DbData.DB2</RepositoryUrl>
     <PackageTags>Database, IBM, DB2, ADO.NET, .NET, Core, Snandard, Framework</PackageTags>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
