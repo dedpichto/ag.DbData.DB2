@@ -68,6 +68,9 @@
         <member name="M:ag.DbData.DB2.DB2DbDataObject.BeginTransaction(System.String)">
             <inheritdoc />
         </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.BeginTransaction">
+            <inheritdoc />
+        </member>
         <member name="M:ag.DbData.DB2.DB2DbDataObject.ExecuteAsync(System.String)">
             <inheritdoc />
         </member>
