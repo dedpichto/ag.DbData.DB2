@@ -77,6 +77,18 @@ namespace ag.DbData.DB2
             innerFillDataTable(query, timeout, true);
 
         /// <inheritdoc />
+        public override DataTable FillDataTable(DbCommand dbCommand) => innerFillDataTable((DB2Command)dbCommand, -1, false);
+
+        /// <inheritdoc />
+        public override DataTable FillDataTable(DbCommand dbCommand, int timeout) => innerFillDataTable((DB2Command)dbCommand, timeout, false);
+
+        /// <inheritdoc />
+        public override DataTable FillDataTableInTransaction(DbCommand dbCommand) => innerFillDataTable((DB2Command)dbCommand, -1, true);
+
+        /// <inheritdoc />
+        public override DataTable FillDataTableInTransaction(DbCommand dbCommand, int timeout) => innerFillDataTable((DB2Command)dbCommand, timeout, true);
+
+        /// <inheritdoc />
         public override int ExecuteCommand(DbCommand cmd) => innerExecuteCommand((DB2Command)cmd, -1, false);
 
         /// <inheritdoc />
@@ -209,7 +221,7 @@ namespace ag.DbData.DB2
                 {
                     if (!IsValidTimeout(cmd, timeout))
                         throw new ArgumentException("Invalid CommandTimeout value", nameof(timeout));
-                    
+
                     if (inTransaction)
                         cmd.Transaction = (DB2Transaction)Transaction;
                     using (var da = new DB2DataAdapter(cmd))
@@ -223,6 +235,32 @@ namespace ag.DbData.DB2
             {
                 Logger?.LogError(ex, $"Error at FillDataTable; command text: {query}");
                 throw new DbDataException(ex, query);
+            }
+        }
+
+        private DataTable innerFillDataTable(DB2Command command, int timeout, bool inTransaction)
+        {
+            try
+            {
+                var table = new DataTable();
+                command.Connection = inTransaction
+                    ? (DB2Connection)TransConnection
+                    : (DB2Connection)Connection;
+                if (!IsValidTimeout(command, timeout))
+                    throw new ArgumentException("Invalid CommandTimeout value", nameof(timeout));
+
+                if (inTransaction)
+                    command.Transaction = (DB2Transaction)Transaction;
+                using (var da = new DB2DataAdapter(command))
+                {
+                    da.Fill(table);
+                }
+                return table;
+            }
+            catch (Exception ex)
+            {
+                Logger?.LogError(ex, $"Error at FillDataTable; command text: {command.CommandText}");
+                throw new DbDataException(ex, command.CommandText);
             }
         }
 
