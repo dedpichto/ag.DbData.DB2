@@ -107,6 +107,18 @@
         <member name="M:ag.DbData.DB2.DB2DbDataObject.GetScalarAsync(System.String,System.Int32,System.Threading.CancellationToken)">
             <inheritdoc />
         </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataTableAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataTableAsync(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataTableAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.DB2.DB2DbDataObject.FillDataTableAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
         <member name="T:ag.DbData.DB2.DB2DbDataSettings">
             <summary>
             Represents DB2DbDataSettings object, inherited from <see cref="T:ag.DbData.Abstraction.DbDataSettings"/>.
