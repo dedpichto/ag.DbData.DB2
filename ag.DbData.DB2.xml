@@ -170,6 +170,13 @@
             <param name="connectionString">Database connection string.</param>
             <returns><see cref="T:ag.DbData.DB2.DB2DbDataObject"/> implementation of <see cref="T:ag.DbData.Abstraction.IDbDataObject"/> interface.</returns>
         </member>
+        <member name="M:ag.DbData.DB2.Factories.DB2DbDataFactory.Create(System.Int32)">
+            <summary>
+            Creates object of type <see cref="T:ag.DbData.DB2.DB2DbDataObject"/>.
+            </summary>
+            <param name="defaultCommandTimeOut">Replaces default coommand timeout of provider</param>
+            <returns></returns>
+        </member>
         <member name="M:ag.DbData.DB2.Factories.DB2DbDataFactory.#ctor(System.IServiceProvider)">
             <summary>
             Creates new DB2DbDataFactory object.

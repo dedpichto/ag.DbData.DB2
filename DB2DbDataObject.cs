@@ -190,6 +190,8 @@ namespace ag.DbData.DB2
         {
             try
             {
+                if (timeout == -1 & DefaultCommandTimeout != null)
+                    timeout = DefaultCommandTimeout.Value;
                 var dataSet = new DataSet();
                 using (var cmd = new DB2Command(query, inTransaction
                     ? (DB2Connection)TransConnection
@@ -226,6 +228,8 @@ namespace ag.DbData.DB2
         {
             try
             {
+                if (timeout == -1 & DefaultCommandTimeout != null)
+                    timeout = DefaultCommandTimeout.Value;
                 var table = new DataTable();
                 using (var cmd = new DB2Command(query, inTransaction
                     ? (DB2Connection)TransConnection
@@ -254,6 +258,8 @@ namespace ag.DbData.DB2
         {
             try
             {
+                if (timeout == -1 & DefaultCommandTimeout != null)
+                    timeout = DefaultCommandTimeout.Value;
                 var table = new DataTable();
                 command.Connection = inTransaction
                     ? (DB2Connection)TransConnection
@@ -280,6 +286,8 @@ namespace ag.DbData.DB2
         {
             try
             {
+                if (timeout == -1 & DefaultCommandTimeout != null)
+                    timeout = DefaultCommandTimeout.Value;
                 if (!IsValidTimeout(cmd, timeout))
                     throw new ArgumentException("Invalid CommandTimeout value", nameof(timeout));
 
@@ -313,6 +321,8 @@ namespace ag.DbData.DB2
         {
             try
             {
+                if (timeout == -1 & DefaultCommandTimeout != null)
+                    timeout = DefaultCommandTimeout.Value;
                 return await Task.Run(async () =>
                 {
                     int rows;
@@ -342,6 +352,8 @@ namespace ag.DbData.DB2
         {
             try
             {
+                if (timeout == -1 & DefaultCommandTimeout != null)
+                    timeout = DefaultCommandTimeout.Value;
                 return await Task.Run(async () =>
                     {
                         object obj;
@@ -372,6 +384,8 @@ namespace ag.DbData.DB2
         {
             try
             {
+                if (timeout == -1 & DefaultCommandTimeout != null)
+                    timeout = DefaultCommandTimeout.Value;
                 return await Task.Run(async () =>
                 {
                     using (var asyncConnection = new DB2Connection(StringProvider.ConnectionString))
